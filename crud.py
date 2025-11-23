@@ -32,6 +32,9 @@ class CRUD():
                 
                 if vote == "like":
                     joke.rating += 1
+
+                if vote == "dislike":
+                    joke.rating -= 1
                 
                 await session.commit()
                 await session.refresh(joke)
